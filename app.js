@@ -51,7 +51,13 @@ if (
     const dayInMonth = newDate.getUTCDate(); // 1-31
     const dayInfo = newDate.getDay(); // 0-6
     let day;
-    const hours = newDate.getHours();
+    let hours = newDate.getHours();
+    if (hours < 10) {
+      let tempHour = hours.toString();
+      let zero = "0";
+      tempHour = zero.concat(tempHour);
+      hours = tempHour;
+    }
     let minutes = newDate.getMinutes();
     if (minutes < 10) {
       let tempMin = minutes.toString();
